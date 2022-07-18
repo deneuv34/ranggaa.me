@@ -16,7 +16,7 @@
     "*.{js,vue}": "eslint"
   },
   "dependencies": {
-    "core-js": "^3.23.0",
+    "core-js": "^3.23.5",
     "nuxt": "^2.15.7",
     "nuxt-buefy": "^0.4.23"
   },
