@@ -5,7 +5,7 @@ import { profile } from '../data/profile'
 <template>
   <section id="companies" class="companies">
     <div class="companies__inner">
-      <p class="section-label companies__label">Built products at</p>
+      <p class="section-label companies__label">Trusted by</p>
 
       <div class="companies__logos">
         <img
