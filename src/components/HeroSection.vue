@@ -35,6 +35,11 @@ onMounted(() => {
     opacity: 0,
     duration: 0.6,
   }, '-=0.3')
+  .from('.hero__signals', {
+    y: 18,
+    opacity: 0,
+    duration: 0.6,
+  }, '-=0.25')
   .from('.hero__scroll', {
     opacity: 0,
     duration: 0.8,
@@ -57,7 +62,7 @@ onMounted(() => {
       <h1 class="hero__name">{{ profile.name }}</h1>
 
       <p class="hero__tagline">
-        {{ profile.title }} crafting scalable systems and modern web applications with Go, TypeScript, and React.
+        {{ profile.tagline }}
       </p>
 
       <div class="hero__actions">
@@ -68,6 +73,21 @@ onMounted(() => {
           View Resume
         </a>
       </div>
+
+      <dl class="hero__signals" aria-label="Professional highlights">
+        <div class="hero__signal">
+          <dt class="hero__signal-value">9+</dt>
+          <dd class="hero__signal-label">Years delivering production software</dd>
+        </div>
+        <div class="hero__signal">
+          <dt class="hero__signal-value">Fintech</dt>
+          <dd class="hero__signal-label">Payments and financial platforms</dd>
+        </div>
+        <div class="hero__signal">
+          <dt class="hero__signal-value">Fullstack</dt>
+          <dd class="hero__signal-label">Product-minded engineering</dd>
+        </div>
+      </dl>
     </div>
 
     <button class="hero__scroll" @click="scrollToAbout" aria-label="Scroll down">

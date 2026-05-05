@@ -22,10 +22,12 @@ export interface ContactLink {
 export const profile = {
   name: 'Rangga Adhitya Prawira',
   title: 'Fullstack Engineer',
-  tagline: 'Fullstack Engineer | Scalable Systems & Modern Web Apps | Go, TypeScript, React | Event-Driven & API-First Architecture',
+  tagline: 'Fullstack Engineer building reliable product systems across fintech, payments, and internal platforms.',
   location: 'Bandung, West Java, Indonesia',
 
-  summary: `I'm a fullstack engineer who builds end-to-end systems — from user-facing interfaces to the backend services that power them. My core strength is in backend and system design, but I also work across the frontend to deliver complete, production-ready features. I focus on scalable APIs, event-driven systems, and responsive maintainable UIs. Recently exploring AI-powered applications, RAG, and recommendation systems.`,
+  summary: `I'm a fullstack engineer with 9+ years of experience building production systems for fintech, payments, real estate, commerce, and consumer platforms. My work spans backend services, frontend applications, internal tools, and the integrations that connect them.
+
+I'm strongest where product needs meet system reliability: turning business workflows into maintainable software, designing services that can evolve, and shipping features that are practical to operate in production. Recently, I've also been exploring AI-assisted applications, RAG, and recommendation systems.`,
 
   experience: [
     {
