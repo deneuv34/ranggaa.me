@@ -6,7 +6,9 @@
   "scripts": {
     "dev": "vite",
     "generate:resume": "node scripts/generate-resume-pdf.mjs",
+    "prepare:playwright": "playwright install chromium",
     "build": "npm run generate:resume && vue-tsc -b && vite build",
+    "vercel-build": "npm run prepare:playwright && npm run build",
     "preview": "vite preview"
   },
   "dependencies": {
