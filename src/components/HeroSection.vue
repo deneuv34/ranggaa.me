@@ -1,30 +1,13 @@
 <script setup lang="ts">
-import { onMounted, ref } from 'vue'
+import { onMounted } from 'vue'
 import { profile } from '../data/profile'
 import { gsap } from 'gsap'
-
-const heroRef = ref<HTMLElement>()
-const glowRef = ref<HTMLElement>()
-
 const scrollToAbout = () => {
   document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })
 }
 
 const scrollToContact = () => {
   document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })
-}
-
-const handleMouseMove = (e: MouseEvent) => {
-  if (!glowRef.value || !heroRef.value) return
-  const rect = heroRef.value.getBoundingClientRect()
-  const x = e.clientX - rect.left
-  const y = e.clientY - rect.top
-  gsap.to(glowRef.value, {
-    x: x - 300,
-    y: y - 300,
-    duration: 1.2,
-    ease: 'power2.out',
-  })
 }
 
 onMounted(() => {
@@ -62,11 +45,8 @@ onMounted(() => {
 <template>
   <section
     id="hero"
-    ref="heroRef"
     class="hero"
-    @mousemove="handleMouseMove"
   >
-    <div ref="glowRef" class="hero__glow" />
 
     <div class="hero__content">
       <div class="hero__badge">

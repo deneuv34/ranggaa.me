@@ -5,6 +5,8 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 gsap.registerPlugin(ScrollTrigger)
 
 export function useScrollAnimation() {
+  const triggers: ScrollTrigger[] = []
+
   const animateOnScroll = (
     selector: string,
     options: {
@@ -34,7 +36,7 @@ export function useScrollAnimation() {
 
     gsap.set(selector, { y, x, opacity, scale })
 
-    gsap.to(selector, {
+    const tween = gsap.to(selector, {
       y: 0,
       x: 0,
       opacity: 1,
@@ -49,10 +51,14 @@ export function useScrollAnimation() {
         toggleActions: 'play none none none',
       },
     })
+
+    // Track the ScrollTrigger instance for cleanup
+    const st = tween.scrollTrigger
+    if (st) triggers.push(st)
   }
 
   onUnmounted(() => {
-    ScrollTrigger.getAll().forEach(trigger => trigger.kill())
+    triggers.forEach(trigger => trigger.kill())
   })
 
   return { animateOnScroll, gsap, ScrollTrigger }

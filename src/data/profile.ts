@@ -152,6 +152,15 @@ export const profile = {
     { name: 'Redis', category: 'databases' },
     { name: 'Git', category: 'tools' },
     { name: 'CI/CD', category: 'tools' },
+    { name: 'Elasticsearch', category: 'databases' },
+    { name: 'MySQL', category: 'databases' },
+    { name: 'AWS', category: 'cloud' },
+    { name: 'RabbitMQ', category: 'tools' },
+    { name: 'NestJS', category: 'backend' },
+    { name: 'Nuxt.js', category: 'frontend' },
+    { name: 'Next.js', category: 'frontend' },
+    { name: 'Laravel', category: 'backend' },
+    { name: 'Kafka', category: 'tools' },
   ] as Skill[],
 
   contact: [

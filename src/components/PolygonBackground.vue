@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { onMounted, onUnmounted, ref } from 'vue'
-import { gsap } from 'gsap'
 
 const canvasRef = ref<HTMLCanvasElement>()
 let animationId: number
@@ -8,6 +7,8 @@ let mouse = { x: -1000, y: -1000 }
 let points: { x: number; y: number; originX: number; originY: number }[] = []
 let width = 0
 let height = 0
+let cachedBorderColor = '#2a2a2a'
+let cachedMutedColor = '#666666'
 
 const GRID_SIZE = 80
 const INFLUENCE_RADIUS = 200
@@ -74,7 +75,7 @@ function draw() {
   }
 
   // Draw polygon connections
-  ctx.strokeStyle = getComputedStyle(document.documentElement).getPropertyValue('--color-border').trim() || '#2a2a2a'
+  ctx.strokeStyle = cachedBorderColor
   ctx.lineWidth = 0.5
 
   for (let i = 0; i < points.length; i++) {
@@ -111,7 +112,7 @@ function draw() {
       : 1
 
     ctx.globalAlpha = opacity
-    ctx.fillStyle = getComputedStyle(document.documentElement).getPropertyValue('--color-text-muted').trim() || '#666666'
+    ctx.fillStyle = cachedMutedColor
     ctx.beginPath()
     ctx.arc(point.x, point.y, size, 0, Math.PI * 2)
     ctx.fill()
@@ -131,6 +132,12 @@ function handleMouseLeave() {
   mouse.y = -1000
 }
 
+function cacheColors() {
+  const styles = getComputedStyle(document.documentElement)
+  cachedBorderColor = styles.getPropertyValue('--color-border').trim() || '#2a2a2a'
+  cachedMutedColor = styles.getPropertyValue('--color-text-muted').trim() || '#666666'
+}
+
 function handleResize() {
   const canvas = canvasRef.value
   if (!canvas) return
@@ -139,12 +146,21 @@ function handleResize() {
   initPoints()
 }
 
+// Watch for theme changes via class mutations on <html>
+let themeObserver: MutationObserver | null = null
+
 onMounted(() => {
   handleResize()
+  cacheColors()
   draw()
   window.addEventListener('mousemove', handleMouseMove, { passive: true })
   window.addEventListener('mouseleave', handleMouseLeave)
   window.addEventListener('resize', handleResize)
+
+  themeObserver = new MutationObserver(() => {
+    cacheColors()
+  })
+  themeObserver.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] })
 })
 
 onUnmounted(() => {
@@ -152,6 +168,7 @@ onUnmounted(() => {
   window.removeEventListener('mousemove', handleMouseMove)
   window.removeEventListener('mouseleave', handleMouseLeave)
   window.removeEventListener('resize', handleResize)
+  themeObserver?.disconnect()
 })
 </script>
 
