@@ -706,50 +706,15 @@
     margin-bottom: 2.5rem;
   }
 
-  .companies__track-wrapper {
-    position: relative;
-  }
-
-  .companies__fade-left {
-    position: absolute;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    width: 6rem;
-    background: linear-gradient(to right, #0e0e0e, transparent);
-    z-index: 10;
-    pointer-events: none;
-  }
-
-  .companies__fade-right {
-    position: absolute;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    width: 6rem;
-    background: linear-gradient(to left, #0e0e0e, transparent);
-    z-index: 10;
-    pointer-events: none;
-  }
-
-  .light .companies__fade-left {
-    background: linear-gradient(to right, #fafafa, transparent);
-  }
-
-  .light .companies__fade-right {
-    background: linear-gradient(to left, #fafafa, transparent);
-  }
-
-  .companies__track {
+  .companies__logos {
     display: flex;
-    gap: 3rem;
     align-items: center;
-    width: max-content;
-    animation: marquee 40s linear infinite;
+    justify-content: center;
+    gap: 3rem;
+    flex-wrap: wrap;
   }
 
   .companies__logo {
-    flex-shrink: 0;
     height: 2.5rem;
     opacity: 0.5;
     transition: opacity 0.3s ease;
