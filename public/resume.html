@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rangga Adhitya Prawira - Resume</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Georgia', 'Times New Roman', serif;
+      font-size: 10.5pt;
+      line-height: 1.45;
+      color: #1a1a1a;
+      background: #fff;
+      max-width: 8.5in;
+      margin: 0 auto;
+      padding: 0.4in 0.55in;
+    }
+
+    a {
+      color: #1a1a1a;
+      text-decoration: none;
+    }
+
+    /* Header */
+    .header {
+      text-align: center;
+      margin-bottom: 14pt;
+      padding-bottom: 8pt;
+      border-bottom: 1.5pt solid #1a1a1a;
+    }
+
+    .header h1 {
+      font-size: 18pt;
+      font-weight: 700;
+      letter-spacing: 0.5pt;
+      margin-bottom: 3pt;
+    }
+
+    .header .title {
+      font-size: 11pt;
+      font-weight: 400;
+      color: #333;
+      margin-bottom: 6pt;
+    }
+
+    .header .contact-info {
+      font-size: 9pt;
+      color: #444;
+      line-height: 1.6;
+    }
+
+    .header .contact-info .sep {
+      margin: 0 5pt;
+    }
+
+    /* Sections */
+    .section {
+      margin-bottom: 12pt;
+    }
+
+    .section-title {
+      font-size: 11pt;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.8pt;
+      border-bottom: 0.75pt solid #555;
+      padding-bottom: 2pt;
+      margin-bottom: 7pt;
+    }
+
+    /* Summary */
+    .summary p {
+      font-size: 10pt;
+      line-height: 1.5;
+      color: #222;
+      text-align: justify;
+    }
+
+    .summary-list {
+      padding-left: 15pt;
+      margin-top: 2pt;
+      margin-bottom: 0;
+    }
+
+    .summary-list li {
+      font-size: 10pt;
+      line-height: 1.45;
+      margin-bottom: 1.5pt;
+      color: #222;
+    }
+
+    /* Experience */
+    .job {
+      margin-bottom: 10pt;
+    }
+
+    .job:last-child {
+      margin-bottom: 0;
+    }
+
+    .job-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+    }
+
+    .job-title {
+      font-size: 10.5pt;
+      font-weight: 700;
+    }
+
+    .job-period {
+      font-size: 9.5pt;
+      color: #444;
+      font-style: italic;
+      white-space: nowrap;
+    }
+
+    .job-company {
+      font-size: 10pt;
+      color: #333;
+      margin-bottom: 2pt;
+    }
+
+    .job-location {
+      font-size: 9pt;
+      color: #666;
+    }
+
+    .job-description {
+      font-size: 10pt;
+      color: #333;
+      margin-bottom: 3pt;
+      font-style: italic;
+    }
+
+    .job ul {
+      margin-top: 3pt;
+      padding-left: 15pt;
+    }
+
+    .job li {
+      font-size: 10pt;
+      line-height: 1.45;
+      margin-bottom: 1.5pt;
+      color: #222;
+    }
+
+    .job p.body {
+      font-size: 10pt;
+      line-height: 1.45;
+      color: #222;
+      margin-top: 3pt;
+    }
+
+    .job .sub-heading {
+      font-size: 10pt;
+      font-weight: 700;
+      margin-top: 4pt;
+      margin-bottom: 2pt;
+    }
+
+    /* Skills */
+    .skill-category {
+      margin-bottom: 3pt;
+    }
+
+    .skill-category-name {
+      font-weight: 700;
+      font-size: 10pt;
+    }
+
+    .skill-category-items {
+      font-size: 10pt;
+      color: #333;
+    }
+
+    /* Education */
+    .education-item .degree {
+      font-weight: 700;
+      font-size: 10pt;
+    }
+
+    .education-item .school {
+      font-size: 10pt;
+      color: #333;
+    }
+
+    .education-item .period {
+      font-size: 9.5pt;
+      color: #555;
+      font-style: italic;
+    }
+
+    /* Certifications */
+    .cert-list {
+      list-style: disc;
+      padding-left: 15pt;
+    }
+
+    .cert-list li {
+      font-size: 10pt;
+      margin-bottom: 1.5pt;
+      color: #222;
+    }
+
+    /* Print */
+    @media print {
+      body {
+        padding: 0;
+      }
+
+      .job {
+        page-break-inside: auto;
+      }
+    }
+
+    @page {
+      margin: 0.4in 0.55in;
+      size: letter;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="header">
+    <h1>Rangga Adhitya Prawira</h1>
+    <div class="title">Fullstack Engineer | Scalable Systems &amp; Modern Web Apps | Go, TypeScript, React | Event-Driven &amp; API-First Architecture</div>
+    <div class="contact-info">
+      Bandung, West Java, Indonesia<span class="sep">|</span>
+      <a href="tel:+6285314555514">+6285314555514</a><span class="sep">|</span>
+      <a href="mailto:deneuv3.4@gmail.com">deneuv3.4@gmail.com</a><span class="sep">|</span>
+      <a href="https://www.linkedin.com/in/ranggaad">linkedin.com/in/ranggaad</a><span class="sep">|</span>
+      <a href="https://github.com/deneuv34">github.com/deneuv34</a><span class="sep">|</span>
+      <a href="https://gitlab.com/deneuv34">gitlab.com/deneuv34</a>
+    </div>
+  </header>
+
+  <section class="section summary">
+    <h2 class="section-title">Summary</h2>
+    <p>I'm a fullstack engineer who builds end-to-end systems—from user-facing interfaces to the backend services that power them. My core strength is in backend and system design, but I also work across the frontend to deliver complete, production-ready features, not just isolated components.</p>
+
+    <p style="margin-top:6pt; font-weight:700; font-size:10pt;">On the backend, I focus on:</p>
+    <ul class="summary-list">
+      <li>scalable APIs and clean service architecture</li>
+      <li>event-driven systems and asynchronous workflows</li>
+      <li>data modeling and performance optimization</li>
+    </ul>
+
+    <p style="margin-top:6pt; font-weight:700; font-size:10pt;">On the frontend, I focus on:</p>
+    <ul class="summary-list">
+      <li>building responsive, maintainable UIs</li>
+      <li>integrating efficiently with APIs</li>
+      <li>structuring applications for long-term scalability</li>
+    </ul>
+
+    <p style="margin-top:6pt; font-weight:700; font-size:10pt;">I've worked on systems involving:</p>
+    <ul class="summary-list">
+      <li>microservices and distributed architectures</li>
+      <li>real-time or event-based workflows</li>
+      <li>third-party integrations (payments, external APIs)</li>
+      <li>FullStack feature ownership from design to deployment</li>
+    </ul>
+
+    <p style="margin-top:6pt; font-weight:700; font-size:10pt;">Recently, I've been exploring:</p>
+    <ul class="summary-list">
+      <li>AI-powered applications (RAG, embeddings, semantic search)</li>
+      <li>recommendation systems and intelligent features</li>
+      <li>combining structured and unstructured data for better UX</li>
+    </ul>
+
+    <p style="margin-top:6pt;">I aim to grow toward roles where I can own systems end-to-end, contribute to architectural decisions, and build products that are both technically solid and user-focused.</p>
+  </section>
+
+  <section class="section">
+    <h2 class="section-title">Experience</h2>
+
+    <div class="job">
+      <div class="job-header">
+        <span class="job-title">Senior Full Stack Engineer</span>
+        <span class="job-period">February 2024 - Present</span>
+      </div>
+      <div class="job-company">Kredivo Group <span class="job-location">— Jakarta, Indonesia</span></div>
+      <p class="job-description">Kredivo Group is a leading digital financial services provider in Southeast Asia, operating products such as Kredivo, KrediFazz, and Krom, delivering real-time credit and financial solutions at scale.</p>
+      <ul>
+        <li>Developed and maintained internal platforms and operational tools that support critical business workflows across financial services</li>
+        <li>Built end-to-end features across frontend and backend systems using TypeScript and modern web technologies</li>
+        <li>Designed and implemented scalable APIs and backend services, ensuring reliability and performance for internal users</li>
+        <li>Improved internal system efficiency by enhancing tooling used for operations, monitoring, and support workflows</li>
+        <li>Collaborated with cross-functional teams (product, operations, risk, and engineering) to deliver solutions aligned with business needs</li>
+        <li>Contributed to system design decisions, focusing on maintainability, modularity, and clear service boundaries</li>
+        <li>Integrated internal tools with core financial systems and external services where required</li>
+        <li>Ensured robustness through proper error handling, validation, and observability in services</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="job-header">
+        <span class="job-title">Software Engineer</span>
+        <span class="job-period">June 2022 - February 2024</span>
+      </div>
+      <div class="job-company">Xendit <span class="job-location">— Indonesia</span></div>
+      <p class="job-description">Xendit is a Southeast Asian fintech company providing payment infrastructure and APIs that power high-volume, real-time transactions for businesses across the region.</p>
+      <p class="sub-heading">Experience:</p>
+      <ul>
+        <li>Developed and maintained core services for Virtual Account (VA) payments, supporting reliable transaction processing for one of the primary payment methods in Indonesia</li>
+        <li>Designed and implemented backend services handling payment lifecycle flows (creation, payment notification, reconciliation), ensuring accuracy and consistency</li>
+        <li>Ensured system reliability by implementing idempotency, validation, and fault-tolerant handling for payment events</li>
+        <li>Collaborated with cross-functional teams (product, operations, and finance) to support high-volume, real-time transaction workflows</li>
+      </ul>
+      <p class="sub-heading">Key Contributions &amp; Impact:</p>
+      <ul>
+        <li>Contributed as part of a 3-engineer initiative team to design and build a duplicate payment alert system</li>
+        <li>Helped reduce operational and financial risk, contributing to approximately $250K/year in cost savings</li>
+        <li>Improved internal visibility into payment anomalies, enabling faster investigation and resolution by operations teams</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="job-header">
+        <span class="job-title">Co-Founder</span>
+        <span class="job-period">December 2021 - September 2023</span>
+      </div>
+      <div class="job-company">Rencana <span class="job-location">— Indonesia</span></div>
+      <p class="body">Rencana is an financial and investment planner through financial consultation and digital media. Our mission is to maximize our clients value with financial simplicity &amp; smarter touch to reach their life goals.</p>
+    </div>
+
+    <div class="job">
+      <div class="job-header">
+        <span class="job-title">Software Engineer</span>
+        <span class="job-period">April 2021 - July 2023</span>
+      </div>
+      <div class="job-company">Keller Williams Realty, Inc. <span class="job-location"></span></div>
+      <p class="job-description">Keller Williams Realty, Inc. is the world's largest real estate franchise by agent count and largest in the U.S. by units sold and sales volume, with over 1,000 offices and 180,000 associates across the Americas, Europe, Africa, and Asia.</p>
+      <p class="body">Responsible to develop and maintain Contact Management Service to supercharge Keller Williams's agent's productivity.</p>
+    </div>
+
+    <div class="job">
+      <div class="job-header">
+        <span class="job-title">Backend Developer</span>
+        <span class="job-period">March 2019 - March 2021</span>
+      </div>
+      <div class="job-company">Female Daily Network <span class="job-location">— Jakarta Selatan, Jakarta, Indonesia</span></div>
+      <p class="job-description">Female Daily is Indonesia's largest beauty destination on a mission to revolutionise the way Indonesian women discover, share and buy beauty products, services &amp; cosmetics.</p>
+      <p class="body">Working as Backend Developer that responsible to maintain and develop product's web services that mostly using NodeJS, Typescript, and Go.</p>
+    </div>
+
+    <div class="job">
+      <div class="job-header">
+        <span class="job-title">Web Developer</span>
+        <span class="job-period">July 2018 - March 2019</span>
+      </div>
+      <div class="job-company">Beonco <span class="job-location">— Malang Area, East Java, Indonesia</span></div>
+      <p class="job-description">Beonco is an Indonesia - Malaysia E-Commerce that subsidiary of PT. The Netwerk.</p>
+      <p class="body">Working as Web Developer to create and maintain web service and web application using PHP with Laravel/Lumen Framework</p>
+    </div>
+
+    <div class="job">
+      <div class="job-header">
+        <span class="job-title">Software Engineer</span>
+        <span class="job-period">May 2017 - July 2018</span>
+      </div>
+      <div class="job-company">Triplogic <span class="job-location">— Bandung</span></div>
+      <p class="job-description">Triplogic is an on-demand logistics startup that provides inter- and intra-city last mile delivery services within Indonesia by making use of latent commercial spaces.</p>
+      <p class="body">Work as Software Engineer (Backend) using PHP, Typescript, Go. Also work helping on React based Frontend (React Native &amp; React JS) sometimes.</p>
+    </div>
+
+    <div class="job">
+      <div class="job-header">
+        <span class="job-title">Mobile Programmer Intern</span>
+        <span class="job-period">January 2017 - April 2017</span>
+      </div>
+      <div class="job-company">Refactory <span class="job-location">— Bandung Area, West Java, Indonesia</span></div>
+      <p class="body">Internship as React Native Developer.</p>
+    </div>
+
+    <div class="job">
+      <div class="job-header">
+        <span class="job-title">Web Developer</span>
+        <span class="job-period">2014 - 2015</span>
+      </div>
+      <div class="job-company">D-Art Magazine <span class="job-location">— Bandung Area, West Java, Indonesia</span></div>
+      <p class="body">Graphic Design and Convert to Webpages with HTML, CSS, and Javascript</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2 class="section-title">Technical Skills</h2>
+    <div class="skill-category">
+      <span class="skill-category-name">Top Skills: </span>
+      <span class="skill-category-items">Python (Programming Language), Google BigQuery, Cloud Storage</span>
+    </div>
+    <div class="skill-category">
+      <span class="skill-category-name">Languages: </span>
+      <span class="skill-category-items">English (Limited Working), Sundanese, Bahasa Indonesia (Native or Bilingual)</span>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2 class="section-title">Certifications</h2>
+    <ul class="cert-list">
+      <li>Cloud Engineering</li>
+      <li>Forward</li>
+      <li>Introduction to Typescript</li>
+      <li>GCP Essentials</li>
+      <li>Kubernetes in the Google Cloud</li>
+    </ul>
+  </section>
+
+  <section class="section">
+    <h2 class="section-title">Education</h2>
+    <div class="education-item">
+      <span class="degree">Mobile Apps Developer</span> — <span class="school">Refactory</span>
+      <br><span class="period">2017 - 2017</span>
+    </div>
+  </section>
+
+</body>
+</html>
