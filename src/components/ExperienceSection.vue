@@ -36,16 +36,15 @@ onMounted(() => {
             <div class="experience__period">{{ exp.period }}</div>
             <h3 class="experience__company">{{ exp.company }}</h3>
             <p class="experience__role">{{ exp.role }}</p>
-            <p class="experience__description">{{ exp.description }}</p>
-            <div class="experience__highlights">
-              <span
+            <ul class="experience__list">
+              <li
                 v-for="h in exp.highlights"
                 :key="h"
-                class="experience__highlight"
+                class="experience__list-item"
               >
                 {{ h }}
-              </span>
-            </div>
+              </li>
+            </ul>
           </div>
         </div>
       </div>
