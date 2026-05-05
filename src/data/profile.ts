@@ -40,7 +40,7 @@ export const profile = {
         'Designed scalable APIs ensuring reliability and performance',
         'Contributed to system design focusing on maintainability and modularity',
       ],
-      logo: '/logos/kredivo.svg',
+      logo: '/logos/kredivo.png',
     },
     {
       company: 'Xendit',
@@ -77,7 +77,7 @@ export const profile = {
         'Developed and maintained Contact Management Service',
         'Supercharged agent productivity through tooling improvements',
       ],
-      logo: '/logos/keller-williams.svg',
+      logo: '/logos/keller-williams.png',
     },
     {
       company: 'Female Daily Network',
@@ -124,9 +124,9 @@ export const profile = {
   ] as Experience[],
 
   featuredCompanies: [
-    { name: 'Kredivo', logo: '/logos/kredivo.svg' },
+    { name: 'Kredivo', logo: '/logos/kredivo.png' },
     { name: 'Xendit', logo: '/logos/xendit.svg' },
-    { name: 'Keller Williams', logo: '/logos/keller-williams.svg' },
+    { name: 'Keller Williams', logo: '/logos/keller-williams.png' },
   ],
 
   skills: [
