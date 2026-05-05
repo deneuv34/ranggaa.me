@@ -50,17 +50,16 @@ const particlesOptions = {
 </script>
 
 <template>
-  <div class="relative min-h-screen">
+  <div class="app">
     <NavBar />
 
-    <!-- Particles Background -->
     <vue-particles
       id="tsparticles"
-      class="!fixed inset-0 z-0 pointer-events-none"
+      class="app__particles"
       :options="particlesOptions"
     />
 
-    <main class="relative z-10">
+    <main class="app__main">
       <HeroSection />
       <AboutSection />
       <ExperienceSection />

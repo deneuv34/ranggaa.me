@@ -2,6 +2,7 @@
 import { onMounted } from 'vue'
 import { profile } from '../data/profile'
 import { useScrollAnimation } from '../composables/useScrollAnimation'
+import { MapPin, Briefcase } from 'lucide-vue-next'
 
 const { animateOnScroll } = useScrollAnimation()
 
@@ -17,29 +18,32 @@ onMounted(() => {
 </script>
 
 <template>
-  <section id="about" class="py-32 px-6 relative">
-    <div class="max-w-4xl mx-auto">
-      <h2 class="about-title font-display font-bold text-3xl md:text-5xl mb-12 text-center">
+  <section id="about" class="about">
+    <div class="about__inner">
+      <h2 class="about__title about-title">
         <span class="gradient-text">About Me</span>
       </h2>
 
-      <div class="about-card glass-card gradient-border p-8 md:p-12">
-        <div class="space-y-4">
+      <div class="about__card glass-card gradient-border about-card">
+        <div>
           <p
             v-for="(line, i) in summaryLines"
             :key="i"
-            class="about-line font-body text-lg leading-relaxed text-gray-300"
+            class="about__text about-line"
+            style="margin-bottom: 1rem;"
           >
             {{ line }}
           </p>
         </div>
 
-        <div class="mt-8 flex flex-wrap gap-3">
-          <span class="about-line px-4 py-2 rounded-full text-sm font-body bg-primary-500/10 text-primary-300 border border-primary-500/20">
-            📍 {{ profile.location }}
+        <div class="about__tags">
+          <span class="about__tag about__tag--location about-line">
+            <MapPin :size="14" style="display: inline; vertical-align: middle; margin-right: 4px;" />
+            {{ profile.location }}
           </span>
-          <span class="about-line px-4 py-2 rounded-full text-sm font-body bg-accent-500/10 text-accent-400 border border-accent-500/20">
-            💼 {{ profile.experience.length }}+ years experience
+          <span class="about__tag about__tag--experience about-line">
+            <Briefcase :size="14" style="display: inline; vertical-align: middle; margin-right: 4px;" />
+            {{ profile.experience.length }}+ years experience
           </span>
         </div>
       </div>

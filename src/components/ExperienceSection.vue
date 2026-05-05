@@ -27,7 +27,6 @@ onMounted(() => {
     }
   })
 
-  // Apply VanillaTilt
   cardRefs.value.forEach(el => {
     if (el) {
       VanillaTilt.init(el, {
@@ -42,50 +41,43 @@ onMounted(() => {
 </script>
 
 <template>
-  <section id="experience" class="py-32 px-6 relative">
-    <div class="max-w-5xl mx-auto">
-      <h2 class="section-title font-display font-bold text-3xl md:text-5xl mb-16 text-center">
+  <section id="experience" class="experience">
+    <div class="experience__inner">
+      <h2 class="experience__title section-title">
         <span class="gradient-text">Experience</span>
       </h2>
 
-      <!-- Timeline -->
-      <div class="relative">
-        <!-- Timeline Line -->
-        <div class="absolute left-4 md:left-8 top-0 bottom-0 w-px bg-gradient-to-b from-primary-500/50 via-accent-500/30 to-transparent" />
+      <div class="experience__timeline">
+        <div class="experience__timeline-line" />
 
-        <!-- Timeline Items -->
-        <div class="space-y-10">
+        <div class="experience__items">
           <div
             v-for="(exp, i) in profile.experience"
             :key="exp.company"
             :ref="(el) => setCardRef(el, i)"
             :class="`timeline-card timeline-card-${i}`"
-            class="relative pl-12 md:pl-20"
+            class="experience__item"
           >
-            <!-- Timeline Dot -->
-            <div class="absolute left-2.5 md:left-6.5 top-6 w-3 h-3 rounded-full bg-primary-500 ring-4 ring-primary-500/20" />
+            <div class="experience__dot" />
 
-            <!-- Card -->
-            <div class="glass-card p-6 md:p-8 hover:border-primary-500/30 transition-all duration-300">
-              <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-2 mb-4">
+            <div class="experience__card glass-card">
+              <div class="experience__header">
                 <div>
-                  <h3 class="font-display font-semibold text-xl text-white">{{ exp.company }}</h3>
-                  <p class="font-body text-primary-400 font-medium">{{ exp.role }}</p>
+                  <h3 class="experience__company">{{ exp.company }}</h3>
+                  <p class="experience__role">{{ exp.role }}</p>
                 </div>
-                <div class="flex items-center gap-2">
-                  <span class="font-body text-sm text-gray-500 whitespace-nowrap">{{ exp.period }}</span>
-                </div>
+                <span class="experience__period">{{ exp.period }}</span>
               </div>
 
-              <p class="font-body text-gray-400 text-sm mb-4">{{ exp.description }}</p>
+              <p class="experience__description">{{ exp.description }}</p>
 
-              <ul class="space-y-2">
+              <ul class="experience__highlights">
                 <li
                   v-for="highlight in exp.highlights"
                   :key="highlight"
-                  class="font-body text-sm text-gray-300 flex items-start gap-2"
+                  class="experience__highlight"
                 >
-                  <span class="w-1.5 h-1.5 rounded-full bg-primary-400 mt-2 shrink-0" />
+                  <span class="experience__highlight-dot" />
                   {{ highlight }}
                 </li>
               </ul>
