@@ -19,36 +19,36 @@ export function useScrollAnimation() {
     } = {}
   ) => {
     const {
-      y = 60,
+      y = 30,
       x = 0,
       opacity = 0,
-      duration = 0.8,
-      stagger = 0.1,
+      duration = 0.9,
+      stagger = 0.06,
       delay = 0,
-      ease = 'power3.out',
+      ease = 'power2.out',
       scale = 1,
     } = options
 
-    gsap.fromTo(
-      selector,
-      { y, x, opacity, scale },
-      {
-        y: 0,
-        x: 0,
-        opacity: 1,
-        scale: 1,
-        duration,
-        stagger,
-        delay,
-        ease,
-        scrollTrigger: {
-          trigger: selector,
-          start: 'top 85%',
-          end: 'bottom 20%',
-          toggleActions: 'play none none reverse',
-        },
-      }
-    )
+    const elements = document.querySelectorAll(selector)
+    if (!elements.length) return
+
+    gsap.set(selector, { y, x, opacity, scale })
+
+    gsap.to(selector, {
+      y: 0,
+      x: 0,
+      opacity: 1,
+      scale: 1,
+      duration,
+      stagger,
+      delay,
+      ease,
+      scrollTrigger: {
+        trigger: elements[0],
+        start: 'top 88%',
+        toggleActions: 'play none none none',
+      },
+    })
   }
 
   onUnmounted(() => {

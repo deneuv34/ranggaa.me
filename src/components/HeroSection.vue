@@ -1,6 +1,10 @@
 <script setup lang="ts">
+import { onMounted, ref } from 'vue'
 import { profile } from '../data/profile'
-import { ArrowDown } from 'lucide-vue-next'
+import { gsap } from 'gsap'
+
+const heroRef = ref<HTMLElement>()
+const glowRef = ref<HTMLElement>()
 
 const scrollToAbout = () => {
   document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })
@@ -9,11 +13,60 @@ const scrollToAbout = () => {
 const scrollToContact = () => {
   document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })
 }
+
+const handleMouseMove = (e: MouseEvent) => {
+  if (!glowRef.value || !heroRef.value) return
+  const rect = heroRef.value.getBoundingClientRect()
+  const x = e.clientX - rect.left
+  const y = e.clientY - rect.top
+  gsap.to(glowRef.value, {
+    x: x - 300,
+    y: y - 300,
+    duration: 1.2,
+    ease: 'power2.out',
+  })
+}
+
+onMounted(() => {
+  // Staggered entrance
+  const tl = gsap.timeline({ defaults: { ease: 'power3.out' } })
+
+  tl.from('.hero__badge', {
+    y: 16,
+    opacity: 0,
+    duration: 0.7,
+    delay: 0.3,
+  })
+  .from('.hero__name', {
+    y: 40,
+    opacity: 0,
+    duration: 0.8,
+  }, '-=0.3')
+  .from('.hero__tagline', {
+    y: 24,
+    opacity: 0,
+    duration: 0.7,
+  }, '-=0.4')
+  .from('.hero__actions', {
+    y: 20,
+    opacity: 0,
+    duration: 0.6,
+  }, '-=0.3')
+  .from('.hero__scroll', {
+    opacity: 0,
+    duration: 0.8,
+  }, '-=0.2')
+})
 </script>
 
 <template>
-  <section id="hero" class="hero">
-    <div class="hero__glow" />
+  <section
+    id="hero"
+    ref="heroRef"
+    class="hero"
+    @mousemove="handleMouseMove"
+  >
+    <div ref="glowRef" class="hero__glow" />
 
     <div class="hero__content">
       <div class="hero__badge">
@@ -37,8 +90,8 @@ const scrollToContact = () => {
       </div>
     </div>
 
-    <div class="hero__scroll" @click="scrollToAbout">
+    <button class="hero__scroll" @click="scrollToAbout" aria-label="Scroll down">
       <div class="hero__scroll-line" />
-    </div>
+    </button>
   </section>
 </template>
