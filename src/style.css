@@ -11,8 +11,8 @@
   --color-text-muted: #666666;
   --color-accent: #e8e4dd;
   --color-accent-warm: #c9a96e;
-  --font-display: "Clash Display", sans-serif;
-  --font-body: "Satoshi", sans-serif;
+  --font-display: "Cabinet Grotesk", sans-serif;
+  --font-body: "General Sans", sans-serif;
   --animate-marquee: marquee 40s linear infinite;
   --animate-fade-in: fade-in 0.8s ease forwards;
   --animate-slide-up: slide-up 0.6s ease forwards;
