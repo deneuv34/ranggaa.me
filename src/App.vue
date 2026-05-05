@@ -6,6 +6,7 @@ import ExperienceSection from './components/ExperienceSection.vue'
 import CompaniesSection from './components/CompaniesSection.vue'
 import SkillsSection from './components/SkillsSection.vue'
 import ContactSection from './components/ContactSection.vue'
+import PolygonBackground from './components/PolygonBackground.vue'
 import { useTheme } from './composables/useTheme'
 
 useTheme()
@@ -14,7 +15,7 @@ useTheme()
 <template>
   <div class="app">
     <div class="grain-overlay" />
-    <div class="dot-grid" />
+    <PolygonBackground />
     <NavBar />
 
     <main class="app__main">

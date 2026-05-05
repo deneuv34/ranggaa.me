@@ -99,21 +99,14 @@
     animation: grain 8s steps(10) infinite;
   }
 
-  /* --- Dot Grid Background --- */
-  .dot-grid {
+  /* --- Polygon Background --- */
+  .polygon-bg {
     position: fixed;
     inset: 0;
     z-index: 0;
     pointer-events: none;
-    opacity: 0.4;
-    background-image: radial-gradient(circle, var(--color-border) 0.5px, transparent 0.5px);
-    background-size: 32px 32px;
-    mask-image: radial-gradient(ellipse 60% 50% at 50% 50%, black 20%, transparent 70%);
-    -webkit-mask-image: radial-gradient(ellipse 60% 50% at 50% 50%, black 20%, transparent 70%);
-  }
-
-  .light .dot-grid {
-    opacity: 0.3;
+    width: 100%;
+    height: 100%;
   }
 
   /* --- Card --- */
@@ -757,18 +750,13 @@
 
   .companies__logo {
     flex-shrink: 0;
-    height: 2rem;
-    opacity: 0.4;
-    filter: invert(1) grayscale(1);
+    height: 2.5rem;
+    opacity: 0.5;
     transition: opacity 0.3s ease;
   }
 
-  .light .companies__logo {
-    filter: grayscale(1);
-  }
-
   .companies__logo:hover {
-    opacity: 0.8;
+    opacity: 1;
   }
 
   /* ===== SKILLS ===== */
