@@ -14,26 +14,18 @@ const particlesOptions = {
   fullScreen: false,
   background: { color: { value: 'transparent' } },
   fpsLimit: 60,
-  interactivity: {
-    events: {
-      onHover: { enable: true, mode: 'grab' as const },
-    },
-    modes: {
-      grab: { distance: 140, links: { opacity: 0.5 } },
-    },
-  },
   particles: {
-    color: { value: '#6366f1' },
+    color: { value: '#333333' },
     links: {
-      color: '#6366f1',
-      distance: 150,
+      color: '#333333',
+      distance: 200,
       enable: true,
-      opacity: 0.12,
-      width: 1,
+      opacity: 0.05,
+      width: 0.5,
     },
     move: {
       enable: true,
-      speed: 0.6,
+      speed: 0.3,
       direction: 'none' as const,
       random: true,
       straight: false,
@@ -41,16 +33,17 @@ const particlesOptions = {
     },
     number: {
       density: { enable: true },
-      value: 50,
+      value: 30,
     },
-    opacity: { value: 0.25 },
-    size: { value: { min: 1, max: 2.5 } },
+    opacity: { value: 0.15 },
+    size: { value: { min: 0.5, max: 1.5 } },
   },
 }
 </script>
 
 <template>
   <div class="app">
+    <div class="grain-overlay" />
     <NavBar />
 
     <vue-particles
@@ -62,8 +55,8 @@ const particlesOptions = {
     <main class="app__main">
       <HeroSection />
       <AboutSection />
-      <ExperienceSection />
       <CompaniesSection />
+      <ExperienceSection />
       <SkillsSection />
       <ContactSection />
     </main>
